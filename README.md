@@ -1,3 +1,3 @@
-# Liunx
+# projects
 
-Linux—ßœ∞± º«
+My Projects
