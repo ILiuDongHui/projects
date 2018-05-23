@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <title>测试</title>
+</head>
+
+<body>
+    <br/>
+    <div>
+        <input type="button" value="点击测试" onclick="test();">
+    </div>
+    <br/>
+    <div>
+        <textarea name="" id="log" cols="30" rows="10" style="width:1000px;height:300px;"></textarea>
+    </div>
+    <br/>
+    <div>
+        <textarea name="" id="txtResponse" cols="30" rows="10" style="width:1000px;height:300px;"></textarea>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-md5.js"></script>
+    <script type="text/javascript">
+    Date.prototype.format = function(fmt) {
+        var o = {
+            "M+": this.getMonth() + 1, //月份 
+            "d+": this.getDate(), //日 
+            "h+": this.getHours(), //小时 
+            "m+": this.getMinutes(), //分 
+            "s+": this.getSeconds(), //秒 
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+            "S": this.getMilliseconds() //毫秒 
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+
+    function test() {
+
+        var appsecret = '3d11d91dd07a46a995ec405df82ea74d';
+
+        var bodyParam = new Object();
+
+        var sysParam = {
+            method: 'emall.order.synchronize',
+            timestamp: getTimestamp(),
+            format: 'json',
+            app_key: '000018051718371352',
+            v: '1.0',
+            sign: getSign(appsecret, sysParam, bodyParam),
+            sign_method: 'md5',
+            token: 'fbc3c90504a34d2bbc8c7cde09daa947'
+        };
+
+        var url = 'http:localhost:3771/Service/ERPService.asmx/EMallApi?' + createUrl(sysParam);
+
+        request(url, bodyParam);
+
+    }
+
+    function createUrl(params) {
+        var url = [];
+        for (var key in params) {
+            url.push(key + '=' + encodeUtf8(params[key]));
+        }
+        return url.join('&');
+    }
+
+    function request(url, data) {
+        $('#log').val(url + '\r\n' + '\r\n' + JSON.stringify(data));
+
+        $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: data,
+            contentType:'application/json',
+            async:false,
+            cache:false,
+            application:60000,
+            success: function(res) {
+                $('#txtResponse').val(JSON.stringify(res));
+            },
+            error:function(e){
+                console.log(e);
+                $('#txtResponse').val(JSON.stringify(e));
+            }
+        });
+    }
+
+    function getSign(appsecret, params, body) {
+        var sortArray = [];
+        for (var key in params) {
+            sortArray.push(key + "" + params[key]);
+        }
+        var sign = [];
+        sign.push(appsecret);
+        sign.push(sortArray.sort().join(''));
+        sign.push(body);
+        sign.push(appsecret);
+        return md5(sign.join(''));
+    }
+
+    function md5(content) {
+        var _md5 = $.md5(content);
+        return _md5.toUpperCase();
+    }
+
+    function getTimestamp() {
+        return new Date().format("yyyy-MM-dd hh:mm:ss");
+    }
+
+    function encodeUtf8(text) {
+        return encodeURIComponent(text);
+    }
+
+    function decodeUtf8(bytes) {
+        return decodeURIComponent(encoded).join('');
+    }
+    </script>
+</body>
+
+</html>
