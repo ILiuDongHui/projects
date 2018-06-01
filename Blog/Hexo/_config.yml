@@ -4,7 +4,7 @@
 
 # Site
 title: 刘东辉 # 网站标题
-subtitle: 成长之路  # 网站副标题
+subtitle:   # 网站副标题
 description: blog.ildh.net  # 网站描述
 keywords: ldh,ildh,blog,hexo,csharp,c#,java   # 网站关键字
 author: Liu Dong Hui  # 您的名字
