@@ -13,16 +13,6 @@ language:   # 网站预设的语言
 - zh-hk
 - zh-tw
 - en
-- fr-FR
-- id
-- it
-- ja
-- ko
-- nl-NL
-- pt-BR
-- pt
-- ru
-- vi
 - default
 timezone:   # 网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。
 
