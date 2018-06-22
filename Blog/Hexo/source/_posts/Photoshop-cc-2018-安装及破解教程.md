@@ -6,6 +6,7 @@ tags:
   - PS破解
   - Adobe
 date: 2018-06-11 12:46:29
+comments: true
 ---
 &#160; &#160; &#160; &#160;Photoshop 作为一款图片处理软件一直深受好评，相信很多人都不会去购买正版，所以今天给大家介绍 Photoshop CC 2018 的安装以及破解，各位不妨试一下哦。
 {% asset_img PhotoshopCC2018.png %}

@@ -103,7 +103,7 @@ menu:
   categories: /categories || th
   tags: /tags || tags
   # schedule: /schedule/ || calendar
-  # commonweal: /404.html || heartbeat
+  commonweal: /404.html || heartbeat
   # sitemap: /sitemap.xml || sitemap
   # search: /search/ || search
 
@@ -254,9 +254,9 @@ post_wordcount:
 #alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
-# Declare license on posts
+# Declare license on posts 声明许可证
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -344,7 +344,7 @@ font:
 
 
 # ---------------------------------------------------------------
-# Third Party Services Settings
+# Third Party Services Settings   第三方服务设置
 # ---------------------------------------------------------------
 
 # MathJax Support
@@ -353,25 +353,25 @@ mathjax:
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
-# Han Support docs: https://hanzi.pro/
-han: false
+# Han Support docs: https://hanzi.pro/ 汉字标准格式，印刷品般的汉字排版框架
+han: true
 
 # Swiftype Search API Key
 #swiftype_key:
 
-# Baidu Analytics ID
-#baidu_analytics:
+# Baidu Analytics ID  百度统计
+baidu_analytics: e0865595c4e0b73e5f2f017b4d6ea854
 
-# Duoshuo ShortName
+# Duoshuo ShortName 多说评论框
 #duoshuo_shortname:
 
-# Disqus
+# Disqus 默认评论框（无效）
 disqus:
   enable: false
   shortname:
   count: true
 
-# Hypercomments
+# Hypercomments 评论框
 #hypercomments_id:
 
 # changyan
@@ -381,19 +381,19 @@ changyan:
   appkey:
 
 
-# Valine.
+# Valine. 这个是评论功能，不是阅读统计，也是基于LeanCloud的
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true # 默认false
+  appid:  PtKVItRXkG5luaJnPeml8U4k-gzGzoHsz # your leancloud application appid
+  appkey: KgSjsiVDokncxHOAcMRYXX4y # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
-  avatar: mm # gravatar style
-  guest_info: nick,mail,link # custom comment header
-  pageSize: 10 # pagination size
+  verify: true # Verification code 验证码
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊! #Just go go # comment box placeholder 评论输入框提示语
+  avatar: mm # gravatar style 
+  guest_info: nick,mail,link # custom comment header 自定义评论头（昵称，邮件，链接）
+  pageSize: 10 # pagination size 每页显示的评论条数
 
 
 # Support for youyan comments system.
@@ -535,12 +535,12 @@ rating:
   color:  fc6423
 # ---------------------------------------------------------------
 
-# Show number of visitors to each article.
-# You can visit https://leancloud.cn get AppID and AppKey.
+# Show number of visitors to each article. 显示每篇文章的访问人数
+# You can visit https://leancloud.cn get AppID and AppKey. （LeanCloud提供）
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: PtKVItRXkG5luaJnPeml8U4k-gzGzoHsz #<app_id>
+  app_key: KgSjsiVDokncxHOAcMRYXX4y #<app_key>
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
@@ -598,9 +598,9 @@ calendar:
   singleEvents: true
   maxResults: 250
 
-# Algolia Search
+# Algolia Search 搜索服务
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 10
   labels:
@@ -818,3 +818,8 @@ images: images
 
 # Theme version
 version: 5.1.4
+
+
+#! ---------------------------------------------------------------
+#! 自行增加的属性
+#! ---------------------------------------------------------------

@@ -26,6 +26,19 @@
   @extend .post-body .image-caption;
 }
 
+/* 修改链接文字样式 */
+.post-body p a{
+ color: #0593d3;
+ border-bottom: none;
+ /*border-bottom: 1px solid #0593d3;*/  /*蓝色下划线*/
+ &:hover {
+   color: #fc6423;            /*#ff106c;蓝色*/ /*#fc6423;橘红色*/
+   /*text-decoration: underline;*/    /*超链接下划线*/
+   border-bottom: none;
+   border-bottom: 1px solid #fc6423;  /*橘红色下划线*/
+ }
+}
+
 .post-sticky-flag {
   display: inline-block;
   font-size: 16px;

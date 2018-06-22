@@ -85,6 +85,11 @@ pagination_dir: page  # 分页目录
 # theme: landscape                    # 当前主题名称。值为false时禁用主题
 theme: NexT
 
+algolia:
+  applicationID: 'GCC22L8K8K'
+  indexName: 'Hexo_NexT_Search'
+  chunkSize: 5000
+
 # Deployment  部署
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:  

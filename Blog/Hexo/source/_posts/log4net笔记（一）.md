@@ -6,6 +6,7 @@ categories:
 tags:  
 - CSharp
 - Log
+comments: true
 ---
 &#160; &#160; &#160; &#160;**Apache log4net** 库是帮助程序员将日志语句输出到各种输出目标的工具。
 log4net是Microsoft®.NET运行时的优秀Apache log4j™框架的一个端口。我们保持框架与原始log4j类似，同时利用.NET运行时的新功能。

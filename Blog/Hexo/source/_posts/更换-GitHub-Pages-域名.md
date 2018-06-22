@@ -5,6 +5,7 @@ categories:
 - GitHub
 tags:  
 - GitHub Pages
+comments: true
 ---
 {% asset_img github_pages.png %}
 <!-- more -->
