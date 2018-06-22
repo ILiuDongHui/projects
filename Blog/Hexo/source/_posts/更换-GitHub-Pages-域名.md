@@ -1,12 +1,12 @@
 ---
-title: GitHub Pages 绑定个人域名
-date: 2018-05-29 17:32:30
+title: 更换 GitHub Pages 域名
+date: 2018-06-22 15:32:20
 categories: 
-- 
+- GitHub
 tags:  
 - GitHub Pages
 ---
-教你如何将 GitHub Pages 绑定到自己的域名。
+{% asset_img github_pages.png %}
 <!-- more -->
 
 ## Begin

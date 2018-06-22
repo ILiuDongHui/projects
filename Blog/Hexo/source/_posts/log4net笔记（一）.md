@@ -1,34 +1,35 @@
 ---
-title: log4net 学习笔记(第一章)
-date: 2018-05-31 17:55:00
-categories: 
-- C#
+title: log4net笔记（一）
+date: 2018-06-22 16:33:30
+categories:
+- DotNet
 tags:  
-- C#
+- CSharp
+- Log
 ---
-**Apache log4net** 库是帮助程序员将日志语句输出到各种输出目标的工具。log4net是Microsoft®.NET运行时的优秀Apache log4j™框架的一个端口。我们保持框架与原始log4j类似，同时利用.NET运行时的新功能。
+&#160; &#160; &#160; &#160;**Apache log4net** 库是帮助程序员将日志语句输出到各种输出目标的工具。
+log4net是Microsoft®.NET运行时的优秀Apache log4j™框架的一个端口。我们保持框架与原始log4j类似，同时利用.NET运行时的新功能。
 <!-- more -->
 # log4net 学习笔记-第一章
-
 *作为一个程序员，要有一颗“活到老，学到老”的心，更何况现在还是个菜鸟，缺乏的技能点太多，总是有无尽的烦劳。*
 
-还有整整一个月，毕业即将满1年了，可是技术还是那么菜，感生活不易，敲码艰难，但仍要继续；
+还有整整一个月，毕业即将满1年了，可是技术还是那么菜，感生活不易，但仍要继续；
 在小哥哥的第一个公司里苦干了一年多，忙于改BUG，什么都没学到，就连一个程序需要记录日志这种低级问题都不知道，  
 属实不能忍，幸好小哥哥有一颗刨根问底儿的心。
 
 ### 什么是Apache log4net™
-各大论坛的博客写的都不是那么尽人意，坑的不浅，先放上官方文档地址，建议看官方文档，  
-[Apache log4net 官方文档](http://logging.apache.org/log4net/index.html)  
-
-> Apache log4net 库是帮助程序员将日志语句输出到各种输出目标的工具。log4net是Microsoft®.NET运行时的优秀Apache log4j™框架的一个端口。我们保持框架与原始log4j类似，同时利用.NET运行时的新功能。
+{% asset_img apache_logging.png %}
+{% blockquote @Apache http://logging.apache.org/log4net/index.html Apache log4net 官方文档 %}
+Apache log4net 库是帮助程序员将日志语句输出到各种输出目标的工具。log4net是Microsoft®.NET运行时的优秀Apache log4j™框架的一个端口。我们保持框架与原始log4j类似，同时利用.NET运行时的新功能。
+{% endblockquote %}
 
 简而言之，就是在.NET下，帮助程序员记录程序日志的东西，已经写的相当好的东西，拿来配置下就可以用的东西，比你自个儿写的日志要厉害很多的东西。  
 
 ### log4net简单示例-四步走
 1. 不管你是什么程序，ConsoleApplication 也好，WebApplication 也好，都要写log4net的配置。  
-[参考地址](http://logging.apache.org/log4net/release/config-examples.html)  
+{% link 参考地址 http://logging.apache.org/log4net/release/config-examples.html %}
 在控制台中，需要新建一个 `.config` 类型的配置文件，里面有几个节点  
-```
+``` xml 
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
 	<configSections>
@@ -151,26 +152,39 @@ tags:
 </configuration>
 ```
 
-这就是一个最简单的配置，包含了写入到 **RollingLogFileAppender写入文件** 和 **记录到 MS SQL Server 数据库**  
-第一步就完成了。  
+这是最简单的配置，包含 `RollingLogFileAppender 写入文件` 和 `写入 SQL Server 数据库`  
 
 2. 引用 log4net.dll 
 
-3. 在工程的 AssemblyInfo.cs 文件中，引入 log4net  ，即追加以下信息：  
-控制台和windows窗体：[assembly: log4net.Config.XmlConfigurator(ConfigFile = "../../log4net.config", Watch = true)]  
-Web程序：[assembly: log4net.Config.XmlConfigurator(Watch = true)]  
-也可以在你想用的 namespace 上边写，但是写到 AssemblyInfo.cs 是全局都有效的。
+3. 在工程的 `AssemblyInfo.cs` 文件中，引入 `log4net`  ，即追加以下信息：  
+``` csharp
+// 控制台和windows窗体：
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "../../log4net.config", Watch = true)]
+
+// Web程序：
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
+// 可在任意 namespace 上边声明，但是声明到 AssemblyInfo.cs 是全局都有效的。
+```
+
 
 4. 开始使用  
 - (1)先在 class 中 using log4net;    
-- (2)然后声明一个记录器变量：  
-private static ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);  
-或者 
-var ILog log = LogManager.GetLogger(给你的记录器起个名字);  
+- (2)然后声明一个记录器变量：
+``` csharp 代码说明 http://blog.ildh.net Liu Donghui's blog
+private static ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+或者
+var ILog log = LogManager.GetLogger(给你的记录器起个名字);
+```
 - (3)使用  
+``` csharp 
 log.Info("这里写你的日志信息");// Info 代表日志等级  
-log.Error("日志信息",new Exception("这里是异常信息"));//加了 Exception后，会在日志信息的最后，换行然后追加异常信息  
-日志等级有：ALL,FATAL,ERROR,WARN,DEBUG,INFO  
+
+//加了 Exception后，会在日志信息的最后，换行然后追加异常信息  
+log.Error("日志信息",new Exception("这里是异常信息"));
+
+// 日志等级有：ALL,FATAL,ERROR,WARN,DEBUG,INFO  
+```
   
 如果是记录到文本文件，那么按照本教程，就可以成功创建日志啦  
 如果是写入到数据库，那么需要先建表，建表的语句在配置文件中已经写了，注意，如果表创建不正确，是写入不了数据库的  
@@ -178,6 +192,14 @@ log.Error("日志信息",new Exception("这里是异常信息"));//加了 Except
   
 ### 完成
 好了，简单版教程就是这样了，基本使用是没有问题的，真正使用后你会发现日志的格式化可能不是你所满意的，所以后面小编会继续更新如何自定义日志模板  
-如有不正确的地方，或者不清楚，可以与小编交流哦（QQ：3135366144,163：ildgmsg@163.com），共勉。  
+如有不正确的地方，或者不清楚，可以与小编交流哦  
 
-未完待续...
+{% blockquote %}
+**QQ：**3135366144
+**Email：**ildgmsg@163.com
+**微信：**iliudonghui
+**微信公众号：**95qcs
+{% endblockquote %}
+共勉~
+
+### 未完待续...

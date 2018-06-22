@@ -1,0 +1,19 @@
+home: / || home
+archives: /archives/ || archive
+categories: /categories || th
+tags: /tags || tags
+about: /about/ || user
+# schedule: /schedule/ || calendar
+# commonweal: /404.html || heartbeat
+# sitemap: /sitemap.xml || sitemap
+# search: /search/ || search
+
+# 使用方式：
+# <% for (var link in site.data.menu) { %>
+#  <a href="<%= site.data.menu[link] %>"> <%= link %> </a>
+# <% } %>
+# 
+# 渲染结果如下：
+# <a href="/"> Home </a>
+# <a href="/archives/"> Archives </a>
+# <a href="/categories/"> Categories </a>

@@ -15,7 +15,7 @@
 override: false
 
 # ---------------------------------------------------------------
-# Site Information Settings
+# Site Information Settings   网站信息设置
 # ---------------------------------------------------------------
 
 # To get or check favicons visit: https://realfavicongenerator.net
@@ -26,19 +26,22 @@ override: false
 
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
-favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
+favicon:  # 网站图标
+  # small: /images/favicon-16x16-next.png
+  small: /images/favicon-16x16-blog.png
+  # medium: /images/favicon-32x32-next.png
+  medium: /images/favicon-32x32-blog.png
+  # apple_touch_icon: /images/apple-touch-icon-next.png
+  apple_touch_icon: /images/apple-touch-icon-blog.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
-# Set default keywords (Use a comma to separate)
+# Set default keywords (Use a comma to separate)  设置默认关键字（用逗号分隔）
 keywords: "Hexo, NexT"
 
-# Set rss to false to disable feed link.
-# Leave rss as empty to use site's feed link.
+# Set rss to false to disable feed link.      将 RSS 设置为 false 以禁用反馈链接
+# Leave rss as empty to use site's feed link. 将 RSS 设置为 空 以使用反馈链接
 # Set rss to specific value if you have burned your feed already.
 rss:
 
@@ -47,11 +50,13 @@ footer:
   # If not defined, current year will be used.
   #since: 2015
 
-  # Icon between year and copyright info.
-  icon: user
+  # Icon between year and copyright info.   年份和版权声明中间的图标
+  # icon: user # 用户头像
+  # icon: star-half-empty #半边空心五角星
+  icon: sun-o # 空心太阳
 
-  # If not defined, will be used `author` from Hexo main config.
-  copyright:
+  # If not defined, will be used `author` from Hexo main config. 版权声明
+  copyright: Liu Donghui
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: true
@@ -66,7 +71,7 @@ footer:
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
 
 # ---------------------------------------------------------------
-# SEO Settings
+# SEO Settings  搜索引擎优化设置
 # ---------------------------------------------------------------
 
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
@@ -83,7 +88,7 @@ index_with_subtitle: false
 
 
 # ---------------------------------------------------------------
-# Menu Settings
+# Menu Settings   菜单设置
 # ---------------------------------------------------------------
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
@@ -92,14 +97,15 @@ index_with_subtitle: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
+  about: /about/ || user
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
   archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  categories: /categories || th
+  tags: /tags || tags
+  # schedule: /schedule/ || calendar
+  # commonweal: /404.html || heartbeat
+  # sitemap: /sitemap.xml || sitemap
+  # search: /search/ || search
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -107,21 +113,21 @@ menu_icons:
 
 
 # ---------------------------------------------------------------
-# Scheme Settings
+# Scheme Settings   主题方案设置
 # ---------------------------------------------------------------
 
 # Schemes
 #scheme: Muse
-# scheme: Mist
+scheme: Mist
 # scheme: Pisces
-scheme: Gemini
+# scheme: Gemini
 
 
 # ---------------------------------------------------------------
-# Sidebar Settings
+# Sidebar Settings  侧边栏设置
 # ---------------------------------------------------------------
 
-# Social Links.
+# Social Links.   社交链接
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
@@ -151,10 +157,11 @@ links_layout: block
 #links:
   #Title: http://example.com/
 
-# Sidebar Avatar
-# in theme directory(source/images): /images/avatar.gif
-# in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+# Sidebar Avatar  侧边栏头像
+# in theme directory(source/images): /images/avatar.gif     可放到主题目录（source/images）:/images/avatar.gif
+# in site  directory(source/uploads): /uploads/avatar.gif   可放到网站目录（source/uploads）:/uploads/avatar.gif
+# avatar: /images/avatar.gif # 默认
+avatar: /uploads/avatar.jpg
 
 # Table Of Contents in the Sidebar
 toc:
