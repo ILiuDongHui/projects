@@ -6,14 +6,14 @@ categories:
 tags:
   - NexT
   - Hexo
-date: 2018-06-22 21:19:24
+date: 2018-05-29 19:30:00
 updated:
 ---
 记录下此间过程，同时给路过的朋友参考一下
 <!-- more -->
 
-# 常规功能
-## 404页面
+# 主题美化
+## 美化404页面
 1. 在hexo站点source目录下，新建文件404.html
 2. 编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 `menu` ,将 `commonweal` 前面的 # 删掉，修改路径为 /404.html，即可
 3. 使用腾讯公益404页面替代自己的404页面，做点好事是很好的，只需要把下面这段代码覆盖到你的404.html里就可以了
@@ -31,9 +31,28 @@ updated:
 ```
 
 ### 美化站点特效
-1. 增加动态背景
-2. 增加鼠标点击弹出图标
-3. 把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果
+1. 美化背景，增加网页动态背景
+```yaml
+# 背景特效以下4项，是NexT主题集成的，只需要简单的将 false 改为 true，即可启用对应的动态背景  
+# 不需要向网上那些说的，要到模板文件里加什么引用js的脚本，NexT已经集成了，开启即用，就是这么简单
+
+# Canvas-nest 浮动线条
+canvas_nest: false
+
+# three_waves 水波粒子
+three_waves: false
+
+# canvas_lines 这个是一根线连接两个小点，组成的一个随鼠标放大缩小的东西
+canvas_lines: false
+
+# canvas_sphere 这个是一个很多刺组成的一个球
+canvas_sphere: false
+```
+
+2. 美化鼠标，增加鼠标点击弹出图标
+
+
+3. 美化头像，把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果
 修改 `themes\next\source\css\_common\components\sidebar\sidebar-author.styl`：
 ``` css
 .site-author-image {
@@ -66,7 +85,8 @@ updated:
 }
 /* end */
 ```
-4. 修改连接文字样式：
+
+4. 美化连接文字样式：
 打开`themes\next\source\css\_common\components\post\post.styl`添加以下代码：
 
 ``` css
@@ -82,6 +102,7 @@ updated:
  }
 }
 ```
+
 5. 为next主题的主页文章添加阴影效果
 打开`themes/next/source/css/_custom/custom.styl`文件添加：
 ``` css
@@ -94,7 +115,30 @@ updated:
   }
 ```
 
-# 第三方服务
+6. 启用：页面加载过程中顶部的进度条。
+编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到字段 `pace` ，设为 true。
+
+7. 启用：字数统计
+```bash
+# 执行此命令，安装NexT以来插件
+npm i --save hexo-wordcount
+```
+编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 `post_wordcount` 属性，
+```yaml
+# Post wordcount display settings   文章字数显示设置
+# Dependencies: https://github.com/willin/hexo-wordcount    依赖hexo-wordcount插件。安装命令 "npm install --save hexo-wordcount"
+post_wordcount:
+  item_text: true
+  wordcount: false    # 设为 true，开启 字数统计      （文章标题下面）
+  min2read: false     # 设为 true，开启 阅读时长≈     （文章标题下面）
+  totalcount: false   # 设为 true，开启 全站字数统计   （网站底部，版权声明的右侧）
+  separated_meta: true
+```
+
+8. 开启 CC BY-NC-SA 3.0 协议
+编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 `post_copyright` ，设为 true。
+
+# 使用第三方服务
 ## 评论系统
 ### Valine
 1. 登陆 LeanCloud，创建应用，创建一个新的Class，命名为Comment
@@ -163,6 +207,7 @@ algolia_search:
 将 enable 改为 true 即可，根据需要你可以调整 labels 中的文本。
 
 # 插件
+
 ## RSS
 
 ## Sitemap

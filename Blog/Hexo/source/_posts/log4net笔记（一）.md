@@ -2,9 +2,9 @@
 title: log4net笔记（一）
 date: 2018-06-22 16:33:30
 categories:
-- DotNet
+- .Net
 tags:  
-- CSharp
+- C#
 - Log
 comments: true
 ---
