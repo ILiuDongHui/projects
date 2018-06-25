@@ -118,8 +118,8 @@ menu_icons:
 
 # Schemes
 # scheme: Muse
-scheme: Mist
-# scheme: Pisces
+# scheme: Mist
+scheme: Pisces
 # scheme: Gemini
 
 
@@ -414,7 +414,7 @@ gitment:
   lazy: false # Comments lazy loading with a button     # 评论用按钮加载懒惰（默认false）
   cleanly: true # Hide 'Powered by ...' on footer, and more    # 隐藏页脚的 'Powered by ...' 字样（默认false）
   language: # Force language, or auto switch by theme
-  github_user: 32150676 # MUST HAVE, Your Github ID  # 这里填入你的 GitHub ID，就是上面那个网址返回的json
+  github_user: ILiuDongHui # MUST HAVE, Your Github ID  # 这里填入你的 GitHub ID，就是上面那个网址返回的json （32150676）
   github_repo: Gitment # MUST HAVE, The repo you use to store Gitment comments  # 用于存储 Gitment 评论的仓库
   client_id: 56411d85134622b54412 # MUST HAVE, Github client id for the Gitment # 这个 client id 需要到 https://github.com/settings/applications/new 这个页面注册，注册成功后，会看到有client id 和client secret
   client_secret: a73e107a3e2deaca098a896d6ffe84abf8b013f8 # EITHER this or proxy_gateway, Github access secret token for the Gitment

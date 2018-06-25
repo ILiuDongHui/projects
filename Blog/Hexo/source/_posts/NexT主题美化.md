@@ -148,6 +148,33 @@ post_wordcount:
 5. 将 `enable` 的值设置成 true
 6. 将 `placeholder` 的值设置成你想要的评论提示语
 
+## Gitment
+[参考文档](https://imsun.net/posts/gitment-introduction/)  
+1. 准备:   
+Gitment 需要一个 GitHub 仓库用来存储评论数据,  
+需要注册一个开发账号.[点击注册](https://github.com/settings/applications/new)  
+2. 编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 "Gitment"  
+由于我的版本和参考文档中的不一致,所以配置文件中的属性也不一样,我的配置如下
+```yaml
+# Gitment       # Gitment 评论系统（目前在用）
+# Introduction: https://imsun.net/posts/gitment-introduction/
+# You can get your Github ID from https://api.github.com/users/<Github username> 
+gitment:
+  enable: true    # 是否启用（默认false）
+  mint: true      # 这句没看懂,不用管,默认就行
+  count: true     # 显示评论计数（默认true）
+  lazy: false     # 评论用按钮加载懒惰（默认false）,false就直接展示评论,true就显示一个查看评论按钮
+  cleanly: true   # 隐藏页脚的 'Powered by ...' 字样（默认false）
+  language:       # 这里可以不填
+  github_user:    # 必填.这里填入你的 GitHub ID，就是你的Github登陆用户名,区分大小写
+  github_repo:    # 必填.用于存储 Gitment 评论的仓库名称,区分大小写
+  client_id:      # 第一步中注册后，会看到有client id 和client secret
+  client_secret:  # 第一步中注册后，会看到有client id 和client secret
+  proxy_gateway:  # 不管
+  redirect_protocol: # 不管
+```
+3. 完成以后,在文章最后,用GitHub账号登陆,即可评论
+
 ## 数据统计与分析
 ### 百度统计
 {% blockquote %}
