@@ -385,7 +385,7 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
+  enable: true
   appid:  PtKVItRXkG5luaJnPeml8U4k-gzGzoHsz # your leancloud application appid
   appkey: KgSjsiVDokncxHOAcMRYXX4y # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
@@ -408,7 +408,7 @@ valine:
 # Introduction: https://imsun.net/posts/gitment-introduction/
 # You can get your Github ID from https://api.github.com/users/<Github username>    # 在浏览器地址栏输入 （https://api.github.com/users/你的GitHub登录名 ）会收到一段 json 数据
 gitment:
-  enable: true # （默认false）
+  enable: false # （默认false）
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway（默认true）
   count: true # Show comments count in post meta area   # 显示评论计数（默认true）
   lazy: false # Comments lazy loading with a button     # 评论用按钮加载懒惰（默认false）

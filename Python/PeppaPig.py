@@ -1,7 +1,7 @@
-# coding:utf-8
+Ôªø# coding:utf-8
 from turtle import*
 
-def nose(x,y):#±«◊”
+def nose(x,y):#ÈºªÂ≠ê
     pu()
     goto(x,y)
     pd()
@@ -11,8 +11,8 @@ def nose(x,y):#±«◊”
     for i in range(120):
         if 0<=i<30 or 60<=i<90:
             a=a+0.08
-            lt(3) #œÚ◊Û◊™3∂»
-            fd(a) #œÚ«∞◊ﬂaµƒ≤Ω≥§
+            lt(3) #ÂêëÂ∑¶ËΩ¨3Â∫¶
+            fd(a) #ÂêëÂâçËµ∞aÁöÑÊ≠•Èïø
         else:
             a=a-0.08
             lt(3)
@@ -44,7 +44,7 @@ def nose(x,y):#±«◊”
     end_fill()
 
 
-def head(x,y):#Õ∑
+def head(x,y):#Â§¥
     color((255,155,192),"pink")
     pu()
     goto(x,y)
@@ -67,8 +67,8 @@ def head(x,y):#Õ∑
     for i in range(60):
         if 0<=i<30 or 60<=i<90:
             a=a+0.08
-            lt(3) #œÚ◊Û◊™3∂»
-            fd(a) #œÚ«∞◊ﬂaµƒ≤Ω≥§
+            lt(3) #ÂêëÂ∑¶ËΩ¨3Â∫¶
+            fd(a) #ÂêëÂâçËµ∞aÁöÑÊ≠•Èïø
         else:
             a=a-0.08
             lt(3)
@@ -76,7 +76,7 @@ def head(x,y):#Õ∑
     end_fill()
 
 
-def ears(x,y): #∂˙∂‰
+def ears(x,y): #ËÄ≥Êúµ
     color((255,155,192),"pink")
     pu()
     goto(x,y)
@@ -102,7 +102,7 @@ def ears(x,y): #∂˙∂‰
     end_fill()
 
 
-def eyes(x,y):#—€æ¶
+def eyes(x,y):#ÁúºÁùõ
     color((255,155,192),"white")
     pu()
     seth(90)
@@ -148,7 +148,7 @@ def eyes(x,y):#—€æ¶
     end_fill()
 
 
-def cheek(x,y):#»˘
+def cheek(x,y):#ËÖÆ
     color((255,155,192))
     pu()
     goto(x,y)
@@ -159,7 +159,7 @@ def cheek(x,y):#»˘
     end_fill()
 
 
-def mouth(x,y): #◊Ï
+def mouth(x,y): #Âò¥
     color(239,69,19)
     pu()
     goto(x,y)
@@ -169,7 +169,7 @@ def mouth(x,y): #◊Ï
     circle(40,80)
 
 
-def body(x,y):#…ÌÃÂ
+def body(x,y):#Ë∫´‰Ωì
     color("red",(255,99,71))
     pu()
     goto(x,y)
@@ -190,7 +190,7 @@ def body(x,y):#…ÌÃÂ
     end_fill()
 
 
-def hands(x,y):# ÷
+def hands(x,y):#Êâã
     color((255,155,192))
     pu()
     goto(x,y)
@@ -223,7 +223,7 @@ def hands(x,y):# ÷
     seth(-170)
     circle(20,90)
 
-def foot(x,y):#Ω≈
+def foot(x,y):#ËÑö
     pensize(10)
     color((240,128,128))
     pu()
@@ -251,7 +251,7 @@ def foot(x,y):#Ω≈
     pensize(15)
     fd(20)
 
-def tail(x,y):#Œ≤∞Õ
+def tail(x,y):#Â∞æÂ∑¥
     pensize(4)
     color((255,155,192))
     pu()
@@ -262,7 +262,7 @@ def tail(x,y):#Œ≤∞Õ
     circle(10,330)
     circle(70,30)
 
-def setting():          #≤Œ ˝…Ë÷√
+def setting():          #ÂèÇÊï∞ËÆæÁΩÆ
     pensize(4)
     hideturtle()
     colormode(255)
@@ -271,17 +271,17 @@ def setting():          #≤Œ ˝…Ë÷√
     speed(10)
 
 def main():
-    setting()           #ª≠≤º°¢ª≠± …Ë÷√
-    nose(-100,100)      #±«◊”
-    head(-69,167)       #Õ∑
-    ears(0,160)         #∂˙∂‰
-    eyes(0,140)         #—€æ¶
-    cheek(80,10)        #»˘
-    mouth(-20,30)       #◊Ï
-    body(-32,-8)        #…ÌÃÂ
-    hands(-56,-45)      # ÷
-    foot(2,-177)        #Ω≈
-    tail(148,-155)      #Œ≤∞Õ
-    done()              #Ω· ¯
+    setting()           #ÁîªÂ∏É„ÄÅÁîªÁ¨îËÆæÁΩÆ
+    nose(-100,100)      #ÈºªÂ≠ê
+    head(-69,167)       #Â§¥
+    ears(0,160)         #ËÄ≥Êúµ
+    eyes(0,140)         #ÁúºÁùõ
+    cheek(80,10)        #ËÖÆ
+    mouth(-20,30)       #Âò¥
+    body(-32,-8)        #Ë∫´‰Ωì
+    hands(-56,-45)      #Êâã
+    foot(2,-177)        #ËÑö
+    tail(148,-155)      #Â∞æÂ∑¥
+    done()              #ÁªìÊùü
 
 main()
