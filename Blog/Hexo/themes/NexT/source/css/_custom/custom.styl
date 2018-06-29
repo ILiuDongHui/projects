@@ -1,26 +1,115 @@
 // Custom styles.
-// 为next主题的主页文章添加阴影效果
+
+/************* 首页美化 **************/
+
+// 页面头部背景
+.header {
+  background: url(/images/header_background.jpg);
+}
+
+// 头部inner
+.header-inner {
+  margin:0 auto;
+  padding: 70px 0 47px;
+  width: 700px;
+}
+
+// 标题背景
+.brand {
+  background: transparent; // 透明
+}
+
+// 标题
+.site-title {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 36px;
+  font-size: 48px;
+  font-weight: normal;
+  font-family: 'Lobster Two', 'Roboto Slab', "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+// 副标题
+.site-subtitle {
+  font-size: 15px;
+  color: #fff;
+}
+
+// 菜单栏
+.menu {
+  margin-top: 20px;
+  padding-left: 0;
+  text-align: center;
+  background: rgba(240, 240, 240, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  width: 530px;
+  border-radius: initial;
+}
+
+// 菜单图表链接 以及 超链接样式
+
+/*a {
+    color: rgba(0,0,0,0.8);
+}
+a:hover {
+    color: #ff106c;
+    border-bottom-color: #ff106c;
+}*/
+
+// 菜单字体大小
+
+/*.menu .menu-item a {
+    font-size: 14px;
+}
+.menu .menu-item a:hover {
+    border-bottom-color: #ff106c;
+}*/
+
+// 文章背景框框
 .post {
-   margin-top: 60px;
-   margin-bottom: 60px;
-   padding: 25px;
-   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
-   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
-  }
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5); //太暗了，看不见
+  -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
+  box-shadow: 0 0 5px rgba(202, 203, 203, .5);
+}
+
+// 站点描述
+.site-description {
+  font-size: 16px;
+}
+
+// 侧边栏，作者名
+.site-author-name {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 20px;
+}
+// 文章之间的分割线
+/*.posts-expand .post-eof {
+    margin: 40px auto 40px;
+    background: white;
+}*/
+/************* 文章美化 **************/
 
 //  行代码块样式
 code {
-  	color:#ff7600;
-  	background:#fbf7f8;
-  	margin:2px;
- }
+  color: #ff7600;
+  background: #fbf7f8;
+  margin: 2px;
+}
 
 //  大代码块自定义样式
-.highlight, pre{
-	margin:5px 0;
-	padding:5px;
-	border-radius:3px
+.highlight,
+pre {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 3px
 }
-.highlight, code, pre{
-	border:1px solid #d6d6d6;
+
+.highlight,
+code,
+pre {
+  border: 1px solid #d6d6d6;
 }
