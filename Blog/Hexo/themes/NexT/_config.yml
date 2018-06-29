@@ -103,7 +103,7 @@ menu:
   categories: /categories || th
   tags: /tags || tags
   # schedule: /schedule/ || calendar
-  commonweal: /404.html || heartbeat
+  # commonweal: /404.html || heartbeat
   # sitemap: /sitemap.xml || sitemap
   # search: /search/ || search
 

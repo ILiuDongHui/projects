@@ -82,49 +82,57 @@ PHPIniDir "PHP安装目录"
 
 ### 可能遇到的情况
 1. 安装 Apache 服务，输入指令 `httpd -k install` 报如下错  
-`无法启动此程序，因为计算机中丢失VCRUNTIME140.dll 尝试重新安装此程序以解决此问题`  
-这是因为缺少了Microsoft.Net.Framework的安装,  
-(1)去微软官网下载Microsoft.Net.Framework 4.6.1  
-——其适用于 Windows 7 SP1、Windows 8、Windows 8.1、Windows 10、Windows Server 2008 R2 SP1、Windows Server 2012 和 Windows Server 2012 R2操作系统  
-下载地址：[https://www.microsoft.com/zh-CN/download/details.aspx?id=49981](https://www.microsoft.com/zh-CN/download/details.aspx?id=49981)  
+`无法启动此程序,因为计算机中丢失VCRUNTIME140.dll尝试重新安装此程序以解决此问题`  
+这是因为缺少了`Microsoft.Net.Framework`的安装,  
+(1)去微软官网下载 `Microsoft.Net.Framework 4.6.1`  ，适用于：  
+`Windows 7 SP1` `Windows 8` `Windows 8.1` `Windows 10` `Windows Server 2008 R2 SP1` `Windows Server 2012` `Windows Server 2012 R2`  
+[点击跳转下载地址](https://www.microsoft.com/zh-CN/download/details.aspx?id=49981)  
 (2)去微软官网下载Visual C++ Redistributable for Visual Studio 2015  
-下载地址：[https://www.microsoft.com/zh-cn/download/details.aspx?id=48145](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)  
+[点击跳转下载地址](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)  
 备注：如果服务器所在的windows操作系统是32位的，就下载vc_redist.x86.exe；如果是64位的，vc_redist.x64.exe与vc_redist.x86.exe最好都下载安装
 注意点：vc_redist.x64.exe与vc_redist.x86.exe所属VC++版本需保持一直，比如都是2015或都是2012。
 
 2. 输入指令 `httpd -k install` 安装 Apache服务后，提示如下错  
 `httpd.conf Cannot load php安装目录/php5apache2_4.dll`  
-两种情况，第一种是缺少msvcr110.dll，下载安装就好了。  
-下载地址：[http://www.microsoft.com/zh-CN/download/details.aspx?id=30679](http://www.microsoft.com/zh-CN/download/details.aspx?id=30679)  
-选择下载 `VSU4\vcredist_x86.exe`，如果仍然不行，就换 `VSU4\vcredist_x64.exe`，我就是下的x86无效，更换为x64生效了  
+两种情况，第一种是缺少 `msvcr110.dll`，下载安装就好了。  
+[点击跳转下载地址](http://www.microsoft.com/zh-CN/download/details.aspx?id=30679)  
+选择下载 `VSU4\vcredist_x86.exe`，如果仍然不行，就换 `VSU4\vcredist_x64.exe`，我就是下的 x86 无效，更换为 x64 生效了  
 3. 安装 Apache 出现 `<OS 10013> 以一种访问权限不允许的方式做了一个访问套接字的尝试`  
 这个问题是指80端口被占用了（查看端口使用情况：打开命令行CMD，输入 `netstat -a` 即可查看）  
 修改 Apache安装目录/conf/httpd.conf  
 将 `Listen 80` 更改为 `Listen 其他端口`
 
-4. 安装完环境后，打开网站没有启动index.php页面，在此节点后增加index.php  
-`<IfModule dir_module>
+4. 安装完环境后，打开网站没有启动 index.php 页面，在此节点后增加 index.php  
+```bash 
+<IfModule dir_module>
     DirectoryIndex index.html index.htm index.php
-</IfModule>`
+</IfModule>
+```
 
 5. php 不支持 curl 的终极解决方案  
-(1)取消注释  extension=php_curl.dll  
-(2)设置 extension_dir，比如我的php放在e盘，就是 extension_dir = "E:/php-5.6.30-x64/ext" ,注意不能用"ext"，一定要写完整路径，否则找不到（我试了n多次，才发现这个问题）  
-(3)复制php目录下 libeay32.dll , libssh2.dll, ssleay32.dll 到apache的bin下，比如我的 E:\Apache24\bin  
-不需要放到windows\system32 。
+(1)取消注释  `extension=php_curl.dll`  
+(2)设置 extension_dir，比如我的 php 放在 E 盘，就是 `extension_dir = "E:/php-5.6.30-x64/ext"` ,注意不能用"ext"，一定要写完整路径，否则找不到（我试了n多次，才发现这个问题）  
+(3)复制php目录下 `libeay32.dll` , `libssh2.dll`, `ssleay32.dll` 到 apache 的 `bin` 下，比如我的 `E:\Apache24\bin`  
+不需要放到 `windows\system32` 。
 
 6. windows 2008 r2 系统默认80端口被系统占用的处理 （更改这个80端口，浪费了好多时间，网上一堆教程都没用真是急人）
 使用netstat 命令查看指定端口  
+```bash
 netstat -ano | findstr :80  
+```
 ----如下所示：本地的80端口被进程为4的占用  
+ ```bash
  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING       4  
  TCP    192.168.1.207:60652    221.233.41.28:80       CLOSE_WAIT      17160  
  TCP    [::]:80                [::]:0                 LISTENING       4  
-
+```
 ----任务管理器查看进 pid 为4
+```bash
  进程名   pid  描述
  system   4    net kernel&System
-
+```
  ----打开注册表 regedit
- 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP'右边有一个'start'的DWORD的值将'3'改为'4'。
+ ```bash 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP'
+ ```
+ 右边有一个'start'的DWORD的值将'3'改为'4'。
  ----重启服务器后正常

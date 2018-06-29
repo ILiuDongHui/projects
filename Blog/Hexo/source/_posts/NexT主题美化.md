@@ -9,13 +9,38 @@ tags:
 date: 2018-05-29 19:30:00
 updated:
 ---
-记录下此间过程，同时给路过的朋友参考一下
+# 前言
+{% asset_img next.png %}
 <!-- more -->
+可美化的内容大致如下：
+* 主题美化
+ * 开启`CC BY-NC-SA 3.0`协议
+ * 更有用的公益404
+ * 酷炫的动态背景
+ * 鼠标点击特效
+ * 旋转的圆形头像框
+ * 修改链接文字样式
+ * 修改代码块样式
+ * 首页文章阴影效果
+ * 网站顶部加载进度条
+ * 网站底部的字数统计
+* 使用第三方服务
+ * 开启`Valine`评论系统（基于`LeanCloud`）
+ * 开启`Gitment`评论系统（基于`GitHub`）
+ * 开启`baidu_analytics`百度统计
+ * 开启`Algolia`搜索服务
+* Hexo博客插件
+ * 开启`RSS`订阅
+ * 设置站点导航`Sitemap`
 
 # 主题美化
-## 美化404页面
+
+## 开启 CC BY-NC-SA 3.0 协议
+打开`\themes\NexT\_config.yml`，找到`post_copyright`，设为`true`。
+
+## 更有用的公益404
 1. 在hexo站点source目录下，新建文件404.html
-2. 编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 `menu` ,将 `commonweal` 前面的 # 删掉，修改路径为 /404.html，即可
+2. 打开`\themes\NexT\_config.yml`，找到 `menu` ,将 `commonweal` 前面的 # 删掉，修改路径为 /404.html，即可
 3. 使用腾讯公益404页面替代自己的404页面，做点好事是很好的，只需要把下面这段代码覆盖到你的404.html里就可以了
 ``` html
 <!DOCTYPE html>
@@ -30,11 +55,11 @@ updated:
 </html>
 ```
 
-### 美化站点特效
-1. 美化背景，增加网页动态背景
+## 酷炫的动态背景
+打开`\themes\NexT\_config.yml`，修改以下内容：
 ```yaml
-# 背景特效以下4项，是NexT主题集成的，只需要简单的将 false 改为 true，即可启用对应的动态背景  
-# 不需要向网上那些说的，要到模板文件里加什么引用js的脚本，NexT已经集成了，开启即用，就是这么简单
+# 背景特效以下4项，是NexT主题集成的，只需将 false 改为 true，即可启用
+# 不用向网上说的，到模板文件里加引用js的脚本，NexT已经集成了，开启即用
 
 # Canvas-nest 浮动线条
 canvas_nest: false
@@ -49,12 +74,12 @@ canvas_lines: false
 canvas_sphere: false
 ```
 
-2. 美化鼠标，增加鼠标点击弹出图标
+## 鼠标点击特效
+待更新...
 
-
-3. 美化头像，把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果
+## 旋转的圆形头像框
 修改 `themes\next\source\css\_common\components\sidebar\sidebar-author.styl`：
-``` css
+```css
 .site-author-image {
 
   display: block;
@@ -86,7 +111,7 @@ canvas_sphere: false
 /* end */
 ```
 
-4. 美化连接文字样式：
+## 修改链接文字样式
 打开`themes\next\source\css\_common\components\post\post.styl`添加以下代码：
 
 ``` css
@@ -103,7 +128,31 @@ canvas_sphere: false
 }
 ```
 
-5. 为next主题的主页文章添加阴影效果
+## 修改代码块样式
+打开`\themes\NexT\source\css\_custom\custom.styl`，增加样式选择器：
+（具体样式可自定义）
+```css
+// 行代码块解析的Html标签是<code>some code...</code>
+// 行代码块样式
+code {
+    color:#ff7600;
+    background:#fbf7f8;
+    margin:2px;
+ }
+
+// 多行代码块解析的Html标签是<pre><code>some code...</code></pre>
+// 多行代码块自定义样式
+.highlight, pre{
+  margin:5px 0;
+  padding:5px;
+  border-radius:3px
+}
+.highlight, code, pre{
+  border:1px solid #d6d6d6;
+}
+```
+
+## 主页文章添加阴影效果
 打开`themes/next/source/css/_custom/custom.styl`文件添加：
 ``` css
 .post {
@@ -115,15 +164,15 @@ canvas_sphere: false
   }
 ```
 
-6. 启用：页面加载过程中顶部的进度条。
-编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到字段 `pace` ，设为 true。
+## 启用：页面加载过程中顶部的进度条
+打开`\themes\NexT\_config.yml`，找到字段 `pace` ，设为 true。
 
-7. 启用：字数统计
+## 启用：字数统计
 ```bash
 # 执行此命令，安装NexT以来插件
 npm i --save hexo-wordcount
 ```
-编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 `post_wordcount` 属性，
+打开`\themes\NexT\_config.yml`，找到 `post_wordcount` 属性，
 ```yaml
 # Post wordcount display settings   文章字数显示设置
 # Dependencies: https://github.com/willin/hexo-wordcount    依赖hexo-wordcount插件。安装命令 "npm install --save hexo-wordcount"
@@ -135,25 +184,22 @@ post_wordcount:
   separated_meta: true
 ```
 
-8. 开启 CC BY-NC-SA 3.0 协议
-编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 `post_copyright` ，设为 true。
-
 # 使用第三方服务
 ## 评论系统
 ### Valine
 1. 登陆 LeanCloud，创建应用，创建一个新的Class，命名为Comment
-2. 编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到字段 `valine` 
+2. 打开`\themes\NexT\_config.yml`，找到字段 `valine` 
 3. 将 `appid` 值设置成你的 LeanCloud 的 App ID，
 4. 将 `appkey` 的值设置成你的 LeanCloud 的 App key 
 5. 将 `enable` 的值设置成 true
 6. 将 `placeholder` 的值设置成你想要的评论提示语
 
-## Gitment
+### Gitment
 [参考文档](https://imsun.net/posts/gitment-introduction/)  
 1. 准备:   
 Gitment 需要一个 GitHub 仓库用来存储评论数据,  
 需要注册一个开发账号.[点击注册](https://github.com/settings/applications/new)  
-2. 编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>，找到 "Gitment"  
+2. 打开`\themes\NexT\_config.yml`，找到 "Gitment"  
 由于我的版本和参考文档中的不一致,所以配置文件中的属性也不一样,我的配置如下
 ```yaml
 # Gitment       # Gitment 评论系统（目前在用）
@@ -184,7 +230,7 @@ gitment:
 2. 创建应用，定位到站点的代码获取页面
 3. 复制 hm.js? 后面那串统计脚本 id，如：
 {% asset_img analytics-baidu-id.png %}
-4. 编辑 <font style="background-color: #9954BB;color:#fff;">主题配置文件</font>， 修改字段 `baidu_analytics` 字段，值设置成你的百度统计脚本 id。
+4. 打开`\themes\NexT\_config.yml`， 修改字段 `baidu_analytics` 字段，值设置成你的百度统计脚本 id。
 
 ### 阅读次数统计（LeanCloud）
 请查看 {% link 为NexT主题添加文章阅读量统计功能 https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud %}
