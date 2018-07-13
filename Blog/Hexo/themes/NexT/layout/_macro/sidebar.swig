@@ -171,5 +171,25 @@
       {% endif %}
 
     </div>
+
+	{# 背景音乐 #}
+
+    
+    <div class="sidebar-inner">
+    {# Sakura Tears 櫻花淚 #}
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=509313150&auto=0&height=66"></iframe>
+    {# 我们不该这样的 #}
+    {# <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=36587407&auto=0&height=66"></iframe> #}
+		{# NARUTO Main Theme #}
+		{# <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=784594&auto=1&height=66"></iframe> #}
+		{# 不想病-我是江小白 #}
+		{# <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34341360&auto=0&height=66"></iframe> #}
+		{# 古筝-渔舟唱晚 #}
+		{# <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=520568265&auto=1&height=66"></iframe> #}
+		{# Going home - 七牛云 - 需要点击播放 #}
+		{# <video controls="" autoplay="" name="media"><source src="http://pbt09wmis.bkt.clouddn.com/music/GoingHome.flac" type="audio/flac"></video> #}
+		{# Going home - 隐藏的播放器 chrome无法自动播放 #}
+		{# <audio autoplay="autoplay" height="100" width="100"><source src="http://pbt09wmis.bkt.clouddn.com/music/GoingHome.flac" type="audio/flac" /></audio> #}
+    </div>
   </aside>
 {% endmacro %}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+    <style type="text/css">
+    .content {
+        width: 600px;
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+
+    .left-bar {
+        width: 300px;
+        height: 200px;
+        float: left;
+        border: 1px solid red;
+    }
+
+    ul li {
+        list-style: none;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    li:hover {
+        color: orange;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="left-bar">
+        <ul>
+            <li class="music-name">十年</li>
+            <li class="music-name">朋友</li>
+            <li class="music-name">勇气</li>
+        </ul>
+    </div>
+    <div class="content">
+        <video src="" id="video1" controls autoplay></video>
+        <button id="btn">按钮</button>
+    </div>
+    <script>
+    window.onload = function() {
+        // 歌曲列表
+        var music = [
+            { id: 1, name: "十年" },
+            { id: 2, name: "朋友" },
+            { id: 3, name: "勇气" }
+        ]
+        // 记录当前是哪首歌曲
+        var currentMusic = 0;
+        // 获取DOM
+        var oVideo1 = document.querySelector("#video1");
+        // 初始化
+        oVideo1.src = music[0].name + '.mp3';
+
+        // 歌曲结束事件
+        oVideo1.onended = function() {
+            currentMusic += 1;
+            // 判断是否是最后一首
+            if (currentMusic === music.length) {
+                currentMusic = 0;
+            }
+            var sr = music[currentMusic].name + '.mp3';
+            this.src = sr;
+        }
+
+        // 获取左边歌曲列表的DOM
+        var aList = document.getElementsByClassName("music-name");
+        for (var i = 0; i < aList.length; i++) {
+            // 为了知道具体是那一个li
+            aList[i].index = i;
+            // 给每一个li设定一个事件
+            aList[i].onclick = function() {
+                oVideo1.src = music[this.index].name + ".mp3";
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

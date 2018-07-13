@@ -158,7 +158,7 @@ social_icons:
 
 # Blog rolls
 links_icon: link        # 链接图标
-links_title: 常用链接   # 链接标题
+links_title: 常用链接    # 链接标题
 links_layout: block     # 纵向布局
 #links_layout: inline   # 横向布局，一行3个
 links:
@@ -172,7 +172,7 @@ links:
 avatar: /uploads/avatar.jpg
 
 # Table Of Contents in the Sidebar  # 侧栏内容表
-toc:
+toc: # 编号
   enable: true
 
   # Automatically add list number to toc.   # 自动将列表编号添加到TOC。
@@ -205,11 +205,11 @@ sidebar:
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).       # 从顶部菜单条中的边栏偏移（仅针对双鱼座双子座）。
   offset: 12
 
-  # Back to top in sidebar (only for Pisces | Gemini).
+  # Back to top in sidebar (only for Pisces | Gemini). # 侧边栏返回顶部
   b2t: false
 
-  # Scroll percent label in b2t button.
-  scrollpercent: false
+  # Scroll percent label in b2t button. # 返回顶部按钮 显示百分比
+  scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -295,6 +295,10 @@ custom_logo:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
+# highlight_theme: night
+# highlight_theme: night eighties
+# highlight_theme: night blue
+# highlight_theme: night bright
 
 
 # ---------------------------------------------------------------
@@ -351,7 +355,7 @@ font:
   codes:
     external: true
     family: PT Mono
-    size:
+    size: 14
 
 
 # ---------------------------------------------------------------
@@ -590,7 +594,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO     # 启用百度推广，使博客将推到百度自动网址，这是非常有帮助的搜索引擎优化
-baidu_push: false
+baidu_push: true
 
 # Google Calendar   # 谷歌日历
 # Share your recent schedule to others via calendar page    # 通过日历页面分享你最近的日程安排

@@ -1,0 +1,7 @@
+ <div style="text-align:center;color: #ccc;font-size:14px;">
+    {% if not is_index %}
+	             
+------------本文结束<i class="fa fa-paw"></i>感谢您的阅读------------
+
+	{% endif %}
+</div>
