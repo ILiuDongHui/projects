@@ -334,9 +334,16 @@
     {### END POST BODY ###}
     {#####################}
 
+
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
         {% include 'wechat-subscriber.swig' %}
+      </div>
+    {% endif %}
+
+    {% if not is_index %}
+      <div>
+         {% include 'passage-end-tag.swig' %}
       </div>
     {% endif %}
 
@@ -356,7 +363,7 @@
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"></i> {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}

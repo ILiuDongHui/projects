@@ -9,7 +9,7 @@ tags:
 date: 2018-05-29 19:30:00
 updated:
 ---
-# 前言
+
 {% asset_img next.png %}
 <!-- more -->
 可美化的内容大致如下：
@@ -39,9 +39,9 @@ updated:
 打开`\themes\NexT\_config.yml`，找到`post_copyright`，设为`true`。
 
 ## 更有用的公益404
-1. 在hexo站点source目录下，新建文件404.html
-2. 打开`\themes\NexT\_config.yml`，找到 `menu` ,将 `commonweal` 前面的 # 删掉，修改路径为 /404.html，即可
-3. 使用腾讯公益404页面替代自己的404页面，做点好事是很好的，只需要把下面这段代码覆盖到你的404.html里就可以了
+1. 在hexo站点source目录下，新建文件 `404.html`
+2. 打开`\themes\NexT\_config.yml`，找到 `menu` ,将 `commonweal` 前面的 `#` 删掉，修改路径为 `/404.html`，即可
+3. 使用腾讯公益404页面替代自己的404页面，只需要把下面这段代码覆盖到你的 `404.html` 里
 ``` html
 <!DOCTYPE html>
 <html lang="en">
@@ -74,8 +74,24 @@ canvas_lines: false
 canvas_sphere: false
 ```
 
-## 鼠标点击特效
-待更新...
+## 鼠标点击冒泡特效
+方法一：  
+在浏览器输入网址
+```text
+http://7u2ss1.com1.z0.glb.clouddn.com/love.js
+```
+将js代码复制出来，并在 `\themes\NexT\source\js\` 目录下新建文件夹 `ext\` ，在 `ext\` 目录下新建文件 `love.js` ，将复制的代码粘贴到文件中，保存  
+最后，打开文件 `\themes\NexT\layout\_layout.swig` ，在末尾（在前面引用会出现找不到dom的bug）添加js脚本引用
+```html
+<!-- 鼠标点击冒泡特效（小心心） -->
+<script type="text/javascript" src="\themes\NexT\source\js\ext\love.js"></script>
+```
+方法二：
+直接打开文件 `\themes\NexT\layout\_layout.swig` ，在末尾（在前面引用会出现找不到dom的bug）添加js脚本引用（注意看 `src` 属性）
+```html
+<!-- 鼠标点击冒泡特效（小心心） -->
+<script type="text/javascript" src="http://7u2ss1.com1.z0.glb.clouddn.com/love.js"></script>
+```
 
 ## 旋转的圆形头像框
 修改 `themes\next\source\css\_common\components\sidebar\sidebar-author.styl`：

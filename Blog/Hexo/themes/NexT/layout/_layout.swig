@@ -90,7 +90,7 @@
   {% include '_third-party/exturl.swig' %}
 
   <!-- 页面点击小红心 -->
-  <!--<script type="text/javascript" src="/js/ext/love.js"><script>-->
-  <script type="text/javascript" src="http://pbedarn4e.bkt.clouddn.com/js/love.js"><script>
+  <!--<script type="text/javascript" src="/js/ext/love.js"></script>-->
+  <script type="text/javascript" src="http://pbedarn4e.bkt.clouddn.com/js/love.js"></script>
 </body>
 </html>
