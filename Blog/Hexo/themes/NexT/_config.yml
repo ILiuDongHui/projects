@@ -101,15 +101,17 @@ index_with_subtitle: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
+  home: / || home
   about: /about/ || user
-  # home: / || home
   archives: /archives/ || archive
-  # categories: /categories || th
+  categories: /categories || th
   tags: /tags || tags
   # schedule: /schedule/ || calendar
   # commonweal: /404.html || heartbeat
   # sitemap: /sitemap.xml || sitemap
   # search: /search/ || search
+  books: /books/ || book
+  guestbook: /guestbook/ || envelope
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -147,7 +149,7 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-  Zhihu: https://www.zhihu.com/people/iliudonghui/activities || weibo
+  知乎: https://www.zhihu.com/people/iliudonghui/activities || weibo
   CSDN: https://my.csdn.net/liudonghui1995 || comments-o
 
 
@@ -158,7 +160,7 @@ social_icons:
 
 # Blog rolls
 links_icon: link        # 链接图标
-links_title: 常用链接    # 链接标题
+links_title: 友情链接    # 链接标题
 links_layout: block     # 纵向布局
 #links_layout: inline   # 横向布局，一行3个
 links:
@@ -184,7 +186,7 @@ toc: # 编号
 # Creative Commons 4.0 International License.   # 创意共享4.0国际许可证。
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#creative_commons: by-nc-sa
+creative_commons: by-nc-sa
 #creative_commons:
 
 sidebar:
@@ -223,7 +225,7 @@ sidebar:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.        # 在Cookie中自动保存每个帖子/页面上的滚动位置。
-save_scroll: false
+save_scroll: true
 
 # Automatically excerpt description in homepage as preamble text.           # 自动将主页中的描述作为前导文本。
 excerpt_description: true
@@ -368,8 +370,8 @@ mathjax:
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
-# Han Support docs: https://hanzi.pro/ # 汉字标准格式，印刷品般的汉字排版框架
-han: true
+# Han Support docs: https://hanzi.pro/ # 汉字标准格式，印刷品般的汉字排版框架（字体会变小，和纸质书本字体差不多）
+han: false
 
 # Swiftype Search API Key   # Swiftype 搜索服务 API Key
 #swiftype_key:
@@ -440,8 +442,8 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.  # 百度分享 不支持 https 协议
-#baidushare:
-##  type: button
+baidushare:
+ type: button
 
 # Share     # JiaThis分享
 # This plugin is more useful in China, make sure you known how to use it.           # JiaThis分享在中国更有用，确保你知道如何使用它。
@@ -508,7 +510,7 @@ needmoreshare2:
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
 duoshuo_info:
-  ua_enable: true
+  ua_enable: false
   admin_enable: false
   user_id: 0
   #admin_nickname: Author
@@ -567,11 +569,11 @@ firestore:
   projectId: #required
   bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
 
-# Show PV/UV of the website/page with busuanzi.
+# Show PV/UV of the website/page with busuanzi. 不蒜子统计
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: only
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
@@ -723,7 +725,7 @@ canvas_nest: false
 three_waves: false
 
 # canvas_lines
-canvas_lines: true
+canvas_lines: false
 
 # canvas_sphere
 canvas_sphere: false

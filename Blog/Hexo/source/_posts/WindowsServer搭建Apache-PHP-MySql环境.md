@@ -25,16 +25,16 @@ updated:
 * 下载 MySql
 
 ## 第一步：安装 PHP
-1. 安装 PHP 。解压 PHP 至你想安装到的目录，比如 `D:/dev/php/`
-2. 配置环境变量。将 `D:/dev/php/ext` 追加到 path 最后。（如果 path 编辑时只有1行，那就需要在前边增加分号 `;` ） 
+1. 安装 PHP 。解压 PHP 至你想安装到的目录，比如`D:/dev/php/`
+2. 配置环境变量。将`D:/dev/php/ext`追加到path最后。（如果path编辑时只有1行，那就需要在前边增加分号`;`） 
 
 ## 第二步：安装 MySql
-1. 安装 MySql。这个简单，百度一大堆。 `Mysql` 的默认安装路径是 `C:/Program Files/MySQL/MySQL Server 具体版本号/` 
-2. 配置环境变量。新建系统环境变量 `MYSQL_HOME`，值为 `MySql` 的安装目录。将 `%MYSQL_HOME%\bin` 追加到 path  
-（如果 path 编辑时只有1行，那就需要在前边增加分号 `;` ） 
+1. 安装 MySql（自行百度）。 Mysql 的默认安装路径是`C:/Program Files/MySQL/MySQL Server 具体版本号/` 
+2. 配置环境变量。新建系统环境变量`MYSQL_HOME`，值为 MySql 的安装目录。将`%MYSQL_HOME%\bin`追加到 path  
+（如果 path 编辑时只有1行，那就需要在前边增加分号`;`） 
 
 ## 第三步：配置 PHP
-1. 将 php 安装目录下的 `pho.ini-develop` 文件备份，然后重命名为 `php.ini` ，打开进行编辑。
+1. 将 php 安装目录下的`pho.ini-develop`文件备份，然后重命名为`php.ini` ，打开进行编辑。
 2. 去掉以下配置前面的分号
 ```
 ;extension_dir = "ext"  
@@ -95,7 +95,7 @@ PHPIniDir "PHP安装目录"
 `httpd.conf Cannot load php安装目录/php5apache2_4.dll`  
 两种情况，第一种是缺少 `msvcr110.dll`，下载安装就好了。  
 [点击跳转下载地址](http://www.microsoft.com/zh-CN/download/details.aspx?id=30679)  
-选择下载 `VSU4\vcredist_x86.exe`，如果仍然不行，就换 `VSU4\vcredist_x64.exe`，我就是下的 x86 无效，更换为 x64 生效了  
+选择下载 `VSU4\vcredist_x86.exe`，如果仍然不行，就换 `VSU4\vcredist_x64.exe`，我下的 x86 无效，换为 x64 生效 
 
 ### 安装 Apache 出现 `<OS 10013> 以一种访问权限不允许的方式做了一个访问套接字的尝试`  
 这个问题是指80端口被占用了（查看端口使用情况：打开命令行CMD，输入 `netstat -a` 即可查看）  
