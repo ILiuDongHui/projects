@@ -112,6 +112,7 @@ menu:
   # search: /search/ || search
   books: /books/ || book
   guestbook: /guestbook/ || envelope
+  gankio: /gankio/ || battery
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -151,6 +152,7 @@ social:
   #Skype: skype:yourname?call|chat || skype
   知乎: https://www.zhihu.com/people/iliudonghui/activities || weibo
   CSDN: https://my.csdn.net/liudonghui1995 || comments-o
+  # 福利: http://blog.ildh.net/gankio || battery
 
 
 social_icons:
